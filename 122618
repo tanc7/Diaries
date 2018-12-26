@@ -1,0 +1,9 @@
+Something suspicious is happening. My connection appears to be getting interrupted whenever I am attempting to download the following items without using a VPN
+
+1. Whonix
+2. TAILS
+3. Virtualbox
+
+I see nothing implying that I got deauthenticated from my own wi-fi. 
+
+However, if I attempted to download using my current install of TAILS as a VM, it seems to go fine. It also works if I manually connect either Kali Linux or TAILS to Nord VPN using the ovpn profiles.
