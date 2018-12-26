@@ -7,3 +7,6 @@ Something suspicious is happening. My connection appears to be getting interrupt
 I see nothing implying that I got deauthenticated from my own wi-fi. 
 
 However, if I attempted to download using my current install of TAILS as a VM, it seems to go fine. It also works if I manually connect either Kali Linux or TAILS to Nord VPN using the ovpn profiles.
+
+It could be that the Symantec eOS endpoint sniffers that the FBI has installed on IP's 10.80.0.1 and 10.192.122.1 (a switch-to-a-switch) detected that I was downloading something they do not like (a anonymity tool) and they killed the connection.
+

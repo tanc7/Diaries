@@ -1,0 +1,25 @@
+Something suspicious is happening. My connection appears to be getting interrupted whenever I am attempting to download the following items without using a VPN
+
+1. Whonix
+2. TAILS
+3. Virtualbox
+
+I see nothing implying that I got deauthenticated from my own wi-fi. 
+
+However, if I attempted to download using my current install of TAILS as a VM, it seems to go fine. It also works if I manually connect either Kali Linux or TAILS to Nord VPN using the ovpn profiles.
+
+It could be that the Symantec eOS endpoint sniffers that the FBI has installed on IP's 10.80.0.1 and 10.192.122.1 (a switch-to-a-switch) detected that I was downloading something they do not like (a anonymity tool) and they killed the connection.
+
+I am relying on my outdated TAILS installation more often by the day. TAILS leaves no trace but the lack of storage persistence is annoying. I did however devise a method of file sharing between the host and the guest TAILS using Windows SSH server for Windows 10.
+
+1. Search for "services" in your Windows 10 search tab
+2. Activate the following services or manually start them, SSH Server Proxy and SSH Server Broker and SSHDBroker
+3. You should be able to SSH from TAILS to Windows 10 by ssh name@10.0.2.2
+4. Now configure on Virtualbox VM network settings a port forwarding rule that binds 127.0.1.1:2222 to 10.0.2.15:22
+5. Now you should be able to SSH from Windows to Kali Linux by ssh root@127.0.1.1 -p 2222
+
+Using the tunnel that we created, you can seamlessly transfer out and backup the files you saved in your TAILS installation via SSH by using SCP
+
+TAILS --SCP files--> Windows --SCP files--> Kali Linux.
+
+I came up with this because the OnionShare service built into TAILS didn't work.
